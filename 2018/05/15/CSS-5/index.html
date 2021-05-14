@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jmengh">
+    
+    <title>
+        
+            CSS-5 |
+        
+        Jmengh BLOG
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.jpg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"清晨的森林分出两条路，我选择了人迹更少的那一条，从此决定我一生的道路。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Jmengh BLOG
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">CSS-5</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Jmengh</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2018-05-15 14:28:54
+    </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="精灵图"><a href="#精灵图" class="headerlink" title="精灵图"></a>精灵图</h2><h3 id="精灵图（sprites）的使用"><a href="#精灵图（sprites）的使用" class="headerlink" title="精灵图（sprites）的使用"></a>精灵图（sprites）的使用</h3><p>使用精灵图核心：</p>
+<ol>
+<li>精灵技术主要针对于背景图片使用。就是把多个小背景图片整合到一张大图片中。</li>
+<li>这个大图片也称为 sprites  精灵图  或者 雪碧图</li>
+<li>移动背景图片位置， 此时可以使用 background-position 。</li>
+<li>移动的距离就是这个目标图片的 x 和 y 坐标。注意网页中的坐标有所不同</li>
+<li>因为一般情况下都是往上往左移动，所以数值是负值。</li>
+<li>使用精灵图的时候需要精确测量，每个小背景图片的大小和位置。</li>
+</ol>
+<p>使用精灵图核心总结：</p>
+<ol>
+<li><p>精灵图主要<strong>针对于小的背景图片</strong>使用。</p>
+</li>
+<li><p>主要借助于背景位置来实现—<strong>background-position</strong> 。</p>
+</li>
+<li><p>一般情况下精灵图都是<strong>负值</strong>。（千万注意网页中的坐标： x轴右边走是正值，左边走是负值， y轴同理。）</p>
+</li>
+</ol>
+<h2 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h2><h3 id="字体图标的优点"><a href="#字体图标的优点" class="headerlink" title="字体图标的优点"></a>字体图标的优点</h3><p><strong>轻量级</strong>：一个图标字体要比一系列的图像要小。一旦字体加载了，图标就会马上渲染出来，减少了服务器请求</p>
+<ul>
+<li>灵活性：本质其实是文字，可以很随意的改变颜色、产生阴影、透明效果、旋转等</li>
+<li>兼容性：几乎支持所有的浏览器，请放心使用</li>
+<li>注意： 字体图标不能替代精灵技术，只是对工作中图标部分技术的提升和优化。</li>
+</ul>
+<p><strong>总结：</strong></p>
+<p>1.如果遇到一些结构和样式比较简单的小图标，就用字体图标。<img src="/2018/05/15/CSS-5/1571519724473.png" alt="1571519724473"></p>
+<p>2.如果遇到一些结构和样式复杂一点的小图片，就用精灵图。</p>
+<p><strong>使用步骤</strong></p>
+<p>字体图标是一些网页常见的小图标，我们直接网上下载即可。 因此使用可以分为：</p>
+<p>1.字体图标的下载 </p>
+<p>2.字体图标的引入 （引入到我们html页面中）</p>
+<p>3.字体图标的追加 （以后添加新的小图标）</p>
+<h4 id="字体图标的下载"><a href="#字体图标的下载" class="headerlink" title="字体图标的下载"></a>字体图标的下载</h4><p><strong>icomoon</strong> <strong>字库</strong>  <a class="link" target="_blank" rel="noopener" href="http://icomoon.io/">http://icomoon.io<i class="fas fa-external-link-alt"></i></a>    推荐指数  <strong>★★★★★</strong></p>
+<p><strong>阿里</strong> <strong>iconfont</strong> <strong>字库</strong>   <a class="link" target="_blank" rel="noopener" href="http://www.iconfont.cn/">http://www.iconfont.cn/<i class="fas fa-external-link-alt"></i></a>   推荐指数   <strong>★★★★★</strong></p>
+<h4 id="字体图标的引入"><a href="#字体图标的引入" class="headerlink" title="字体图标的引入"></a>字体图标的引入</h4><p><strong>下载完毕之后，注意原先的文件不要删，后面会用</strong>。</p>
+<p><strong>1.把下载包里面的 fonts 文件夹放入页面根目录下</strong></p>
+<p><img src="/2018/05/15/CSS-5/1571520092646.png"></p>
+<ul>
+<li><strong>字体文件格式</strong></li>
+</ul>
+<p>不同浏览器所支持的字体格式是不一样的，字体图标之所以兼容，就是因为包含了主流浏览器支持的字体文件。</p>
+<p>1).TureType(  <strong>.ttf</strong>  )格式.ttf字体是Windows和Mac的最常见的字体，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome4+、Safari3+、Opera10+、iOS Mobile、Safari4.2+；</p>
+<p>2).Web Open Font Format( <strong>.woff</strong> )格式woff字体，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome6+、Safari3.6+、Opera11.1+；</p>
+<p>3).Embedded Open Type( <strong>.eot</strong> )格式.eot字体是IE专用字体，支持这种字体的浏览器有IE4+；</p>
+<p>4).SVG(  .<strong>svg</strong>  )格式.svg字体是基于SVG字体渲染的一种格式，支持这种字体的浏览器有Chrome4+、Safari3.1+、Opera10.0+、iOS Mobile Safari3.2+；</p>
+<p><strong>2.在 CSS 样式中全局声明字体： 简单理解把这些字体文件通过css引入到我们页面中。</strong></p>
+<p>一定注意字体文件路径的问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@font-face &#123;</span><br><span class="line">  font-family: &#x27;icomoon&#x27;;</span><br><span class="line">  src:  url(&#x27;fonts/icomoon.eot?7kkyc2&#x27;);</span><br><span class="line">  src:  url(&#x27;fonts/icomoon.eot?7kkyc2#iefix&#x27;) format(&#x27;embedded-opentype&#x27;),</span><br><span class="line">    url(&#x27;fonts/icomoon.ttf?7kkyc2&#x27;) format(&#x27;truetype&#x27;),</span><br><span class="line">    url(&#x27;fonts/icomoon.woff?7kkyc2&#x27;) format(&#x27;woff&#x27;),</span><br><span class="line">    url(&#x27;fonts/icomoon.svg?7kkyc2#icomoon&#x27;) format(&#x27;svg&#x27;);</span><br><span class="line">  font-weight: normal;</span><br><span class="line">  font-style: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.html 标签内添加小图标。</strong></p>
+<p><img src="/2018/05/15/CSS-5/1571520411345.png"></p>
+<p><strong>4.给标签定义字体。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">span &#123;</span><br><span class="line">  font-family: &quot;icomoon&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="CSS-三角"><a href="#CSS-三角" class="headerlink" title="CSS 三角"></a>CSS 三角</h2><p>网页中常见一些三角形，使用 CSS 直接画出来就可以，不必做成图片或者字体图标。</p>
+<p>一张图， 你就知道 CSS 三角是怎么来的了, 做法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">	width: 0; </span><br><span class="line">   height: 0;</span><br><span class="line">   border: 50px solid transparent;</span><br><span class="line">border-color: red green blue black;</span><br><span class="line">line-height:0;</span><br><span class="line">   font-size: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>我们用css 边框可以模拟三角效果</li>
+<li>宽度高度为0</li>
+<li>我们4个边框都要写， 只保留需要的边框颜色，其余的不能省略，都改为 transparent 透明就好了</li>
+<li>为了照顾兼容性 低版本的浏览器，加上 font-size: 0;  line-height: 0;</li>
+</ol>
+<h2 id="CSS-用户界面样式"><a href="#CSS-用户界面样式" class="headerlink" title="CSS 用户界面样式"></a>CSS 用户界面样式</h2><h3 id="鼠标样式-cursor"><a href="#鼠标样式-cursor" class="headerlink" title="鼠标样式 cursor"></a>鼠标样式 cursor</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li &#123;</span><br><span class="line">	cursor: pointer; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>设置或检索在对象上移动的鼠标指针采用何种系统预定义的光标形状。</p>
+<p><img src="/2018/05/15/CSS-5/1571521805183.png"></p>
+<h3 id="轮廓线-outline"><a href="#轮廓线-outline" class="headerlink" title="轮廓线 outline"></a>轮廓线 outline</h3><p>给表单添加 outline: 0;   或者  outline: none; 样式之后，就可以去掉默认的蓝色边框。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">	outline: none; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="防止拖拽文本域-resize"><a href="#防止拖拽文本域-resize" class="headerlink" title="防止拖拽文本域 resize"></a>防止拖拽文本域 resize</h3><p> 这样设置文本域右下角是不可以拖拽的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">textarea&#123; </span><br><span class="line">	resize: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="vertical-align-属性应用"><a href="#vertical-align-属性应用" class="headerlink" title="vertical-align 属性应用"></a>vertical-align 属性应用</h2><p>CSS 的 <strong>vertical-align</strong> 属性使用场景： 经常用于设置图片或者表单(行内块元素）和文字垂直对齐。</p>
+<p>官方解释： 用于设置一个元素的<strong>垂直对齐方式</strong>，但是它只针对于行内元素或者行内块元素有效。</p>
+<p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vertical-align : baseline | top | middle | bottom </span><br></pre></td></tr></table></figure>
+
+<p><img src="/2018/05/15/CSS-5/1571522023413.png"></p>
+<p><img src="/2018/05/15/CSS-5/blog\source_posts\CSS-5\1571522040645.png"></p>
+<h3 id="图片、表单和文字对齐"><a href="#图片、表单和文字对齐" class="headerlink" title="图片、表单和文字对齐"></a>图片、表单和文字对齐</h3><p>图片、表单都属于行内块元素，默认的 vertical-align 是基线对齐。</p>
+<p>此时可以给图片、表单这些行内块元素的 <strong>vertical-align 属性设置为 middle</strong> 就可以让文字和图片垂直居中对齐了。</p>
+<h3 id="解决图片底部默认空白缝隙问题"><a href="#解决图片底部默认空白缝隙问题" class="headerlink" title="解决图片底部默认空白缝隙问题"></a>解决图片底部默认空白缝隙问题</h3><p>bug：图片底侧会有一个空白缝隙，原因是行内块元素会和文字的基线对齐。</p>
+<p>主要解决方法有两种：</p>
+<p>1.<strong>给图片</strong>添加 <strong>vertical-align:middle | top| bottom</strong> 等。 </p>
+<p>2.把图片转换为块级元素  <strong>display: block</strong>; </p>
+<h2 id="溢出的文字省略号显示"><a href="#溢出的文字省略号显示" class="headerlink" title="溢出的文字省略号显示"></a>溢出的文字省略号显示</h2><h3 id="单行文本溢出显示省略号"><a href="#单行文本溢出显示省略号" class="headerlink" title="单行文本溢出显示省略号"></a>单行文本溢出显示省略号</h3><p>单行文本溢出显示省略号–必须满足三个条件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*1. 先强制一行内显示文本*/</span><br><span class="line"> white-space: nowrap;  （ 默认 normal 自动换行）</span><br><span class="line"> </span><br><span class="line">/*2. 超出的部分隐藏*/</span><br><span class="line"> overflow: hidden;</span><br><span class="line"> </span><br><span class="line">/*3. 文字用省略号替代超出的部分*/</span><br><span class="line"> text-overflow: ellipsis;</span><br></pre></td></tr></table></figure>
+
+<h3 id="多行文本溢出显示省略号"><a href="#多行文本溢出显示省略号" class="headerlink" title="多行文本溢出显示省略号"></a>多行文本溢出显示省略号</h3><p>多行文本溢出显示省略号，<strong>有较大兼容性问题</strong>，适合于webKit浏览器或移动端（移动端大部分是webkit内核）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/*1. 超出的部分隐藏 */</span><br><span class="line">overflow: hidden;</span><br><span class="line"></span><br><span class="line">/*2. 文字用省略号替代超出的部分 */</span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line"></span><br><span class="line">/* 3. 弹性伸缩盒子模型显示 */</span><br><span class="line">display: -webkit-box;</span><br><span class="line"></span><br><span class="line">/* 4. 限制在一个块元素显示的文本的行数 */</span><br><span class="line">-webkit-line-clamp: 2;</span><br><span class="line"></span><br><span class="line">/* 5. 设置或检索伸缩盒对象的子元素的排列方式 */</span><br><span class="line">-webkit-box-orient: vertical;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2018/05/10/CSS-4/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">CSS-4</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Jmengh</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%BE%E7%81%B5%E5%9B%BE"><span class="nav-text">精灵图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%BE%E7%81%B5%E5%9B%BE%EF%BC%88sprites%EF%BC%89%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">精灵图（sprites）的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"><span class="nav-text">字体图标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E4%BC%98%E7%82%B9"><span class="nav-text">字体图标的优点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E4%B8%8B%E8%BD%BD"><span class="nav-text">字体图标的下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E5%BC%95%E5%85%A5"><span class="nav-text">字体图标的引入</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E4%B8%89%E8%A7%92"><span class="nav-text">CSS 三角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%A0%B7%E5%BC%8F"><span class="nav-text">CSS 用户界面样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BC%A0%E6%A0%87%E6%A0%B7%E5%BC%8F-cursor"><span class="nav-text">鼠标样式 cursor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AE%E5%BB%93%E7%BA%BF-outline"><span class="nav-text">轮廓线 outline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B2%E6%AD%A2%E6%8B%96%E6%8B%BD%E6%96%87%E6%9C%AC%E5%9F%9F-resize"><span class="nav-text">防止拖拽文本域 resize</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vertical-align-%E5%B1%9E%E6%80%A7%E5%BA%94%E7%94%A8"><span class="nav-text">vertical-align 属性应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E3%80%81%E8%A1%A8%E5%8D%95%E5%92%8C%E6%96%87%E5%AD%97%E5%AF%B9%E9%BD%90"><span class="nav-text">图片、表单和文字对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%9B%BE%E7%89%87%E5%BA%95%E9%83%A8%E9%BB%98%E8%AE%A4%E7%A9%BA%E7%99%BD%E7%BC%9D%E9%9A%99%E9%97%AE%E9%A2%98"><span class="nav-text">解决图片底部默认空白缝隙问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%A2%E5%87%BA%E7%9A%84%E6%96%87%E5%AD%97%E7%9C%81%E7%95%A5%E5%8F%B7%E6%98%BE%E7%A4%BA"><span class="nav-text">溢出的文字省略号显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7"><span class="nav-text">单行文本溢出显示省略号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7"><span class="nav-text">多行文本溢出显示省略号</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
