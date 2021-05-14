@@ -178,7 +178,7 @@
 <li>选择器不同，则根据选择器权重执行</li>
 </ul>
 <p>选择器优先级计算表格：</p>
-<p><img src="/2018/04/21/CSS-2/blog\source_posts\CSS-2\1571490129794.png"></p>
+<p><img src="/2018/04/21/CSS-2/1571490129794.png"></p>
 <p>优先级注意点:</p>
 <ol>
 <li><p>权重是有4组数字组成,但是不会有进位。</p>
@@ -287,6 +287,26 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    padding:0;   /* 清除内边距 */</span><br><span class="line">    margin:0;    /* 清除外边距 */</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 <p>​        注意：行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距。但是转换为块级和行内块元素就可以了。</p>
+<h2 id="其他样式"><a href="#其他样式" class="headerlink" title="其他样式"></a>其他样式</h2><h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><p>在 CSS3 中，新增了圆角边框样式，这样我们的盒子就可以变圆角了。</p>
+<p>border-radius 属性用于设置元素的外边框圆角。</p>
+<p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius:length; </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参数值可以为数值或百分比的形式</li>
+<li>如果是正方形，想要设置为一个圆，把数值修改为高度或者宽度的一半即可，或者直接写为 50%</li>
+<li>该属性是一个简写属性，可以跟四个值，分别代表左上角、右上角、右下角、左下角</li>
+<li>分开写：border-top-left-radius、border-top-right-radius、border-bottom-right-radius 和border-bottom-left-radius</li>
+<li>兼容性 ie9+ 浏览器支持, 但是不会影响页面布局,可以放心使</li>
+</ul>
+<h3 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h3><p>CSS3 中新增了盒子阴影，我们可以使用 box-shadow 属性为盒子添加阴影。<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: h-shadow v-shadow blur spread color inset;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2018/04/21/CSS-2/1571541874805.png"></p>
+<h3 id="文字阴影"><a href="#文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h3><p>在 CSS3 中，我们可以使用 text-shadow 属性将阴影应用于文本。<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-shadow: h-shadow v-shadow blur color;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2018/04/21/CSS-2/1571541954222.png"></p>
 
         </div>
 
@@ -294,6 +314,21 @@
 
         
             <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2018/04/26/CSS-3/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">CSS-3</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next">
@@ -411,7 +446,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#css%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-text">css三大特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E5%8F%A0%E6%80%A7"><span class="nav-text">层叠性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="nav-text">继承性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-text">优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="nav-text">盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-text">网页布局的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%EF%BC%88Box-Model%EF%BC%89%E7%BB%84%E6%88%90"><span class="nav-text">盒子模型（Box Model）组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%B9%E6%A1%86%EF%BC%88border%EF%BC%89"><span class="nav-text">边框（border）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%B9%E6%A1%86%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">边框的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E7%9A%84%E7%BB%86%E7%BA%BF%E8%BE%B9%E6%A1%86"><span class="nav-text">表格的细线边框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%B9%E6%A1%86%E4%BC%9A%E5%BD%B1%E5%93%8D%E7%9B%92%E5%AD%90%E5%AE%9E%E9%99%85%E5%A4%A7%E5%B0%8F"><span class="nav-text">边框会影响盒子实际大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E8%BE%B9%E8%B7%9D%EF%BC%88padding%EF%BC%89"><span class="nav-text">内边距（padding）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E8%BE%B9%E8%B7%9D%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-text">内边距的使用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E8%BE%B9%E8%B7%9D%E4%BC%9A%E5%BD%B1%E5%93%8D%E7%9B%92%E5%AD%90%E5%AE%9E%E9%99%85%E5%A4%A7%E5%B0%8F"><span class="nav-text">内边距会影响盒子实际大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%EF%BC%88margin%EF%BC%89"><span class="nav-text">外边距（margin）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-text">外边距的使用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8"><span class="nav-text">外边距典型应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6"><span class="nav-text">外边距合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E5%86%85%E5%A4%96%E8%BE%B9%E8%B7%9D"><span class="nav-text">清除内外边距</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#css%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-text">css三大特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E5%8F%A0%E6%80%A7"><span class="nav-text">层叠性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E6%80%A7"><span class="nav-text">继承性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-text">优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="nav-text">盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="nav-text">网页布局的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%EF%BC%88Box-Model%EF%BC%89%E7%BB%84%E6%88%90"><span class="nav-text">盒子模型（Box Model）组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%B9%E6%A1%86%EF%BC%88border%EF%BC%89"><span class="nav-text">边框（border）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%B9%E6%A1%86%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">边框的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E7%9A%84%E7%BB%86%E7%BA%BF%E8%BE%B9%E6%A1%86"><span class="nav-text">表格的细线边框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%B9%E6%A1%86%E4%BC%9A%E5%BD%B1%E5%93%8D%E7%9B%92%E5%AD%90%E5%AE%9E%E9%99%85%E5%A4%A7%E5%B0%8F"><span class="nav-text">边框会影响盒子实际大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E8%BE%B9%E8%B7%9D%EF%BC%88padding%EF%BC%89"><span class="nav-text">内边距（padding）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E8%BE%B9%E8%B7%9D%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-text">内边距的使用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E8%BE%B9%E8%B7%9D%E4%BC%9A%E5%BD%B1%E5%93%8D%E7%9B%92%E5%AD%90%E5%AE%9E%E9%99%85%E5%A4%A7%E5%B0%8F"><span class="nav-text">内边距会影响盒子实际大小</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%EF%BC%88margin%EF%BC%89"><span class="nav-text">外边距（margin）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-text">外边距的使用方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8"><span class="nav-text">外边距典型应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6"><span class="nav-text">外边距合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E5%86%85%E5%A4%96%E8%BE%B9%E8%B7%9D"><span class="nav-text">清除内外边距</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E6%A0%B7%E5%BC%8F"><span class="nav-text">其他样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86"><span class="nav-text">圆角边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1"><span class="nav-text">盒子阴影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1"><span class="nav-text">文字阴影</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
