@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jmengh">
+    
+    <title>
+        
+            H5C3 |
+        
+        Jmengh BLOG
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.jpg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"清晨的森林分出两条路，我选择了人迹更少的那一条，从此决定我一生的道路。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Jmengh BLOG
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">H5C3</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Jmengh</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2018-05-30 15:48:52
+    </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="2D转换-transform"><a href="#2D转换-transform" class="headerlink" title="2D转换 transform"></a>2D转换 transform</h2><p>2d转换是改变标签在<strong>2维平面</strong>上的<strong>位置和形状</strong>的一种技术</p>
+<h3 id="2维坐标系"><a href="#2维坐标系" class="headerlink" title="2维坐标系"></a>2维坐标系</h3><p><strong>2维坐标系</strong>其实就是指布局的时候的坐标系 如图</p>
+<p><img src="/2018/05/30/H5C3/1524965494414.png"></p>
+<h3 id="2d移动-translate"><a href="#2d移动-translate" class="headerlink" title="2d移动 translate"></a>2d移动 translate</h3><p>2d移动是2d转换里面的一种功能，可以改变元素在页面中的位置，类似 <strong>定位</strong></p>
+<p>使用2d移动的步骤：</p>
+<ol>
+<li>给元素添加 <strong>转换属性</strong>  <code>transform</code></li>
+<li>属性值为 <code>translate(x,y)</code>  如  <code>transform:translate(50px,50px)</code>;</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">  transform: translate(50px,50px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2018/05/30/H5C3/1524965782388.png"></p>
+<p><strong>小结</strong></p>
+<ol>
+<li><strong>translate</strong>中的百分比单位是相对于自身元素的  <code>translate:(50%,50%);</code></li>
+<li><strong>translate</strong>类似定位，不会影响到其他元素的位置</li>
+<li>对行内标签没有效果</li>
+</ol>
+<h3 id="2d旋转-rotate"><a href="#2d旋转-rotate" class="headerlink" title="2d旋转 rotate"></a>2d旋转 rotate</h3><p>2d旋转指的是让元素在2维平面内顺时针旋转或者逆时针旋转</p>
+<p>使用步骤：</p>
+<ol>
+<li>给元素添加转换属性 <code>transform</code></li>
+<li>属性值为 <code>rotate(角度)</code>  如 <code>transform:rotate(30deg)</code>  顺时针方向旋转<strong>30度</strong></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">      transform: rotate(0deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2018/05/30/H5C3/4.gif"></p>
+<p>2d旋转有以下特点</p>
+<ol>
+<li>角度为正时 顺时针 负时 为逆时针</li>
+<li>默认旋转的中心点是元素的中心点</li>
+</ol>
+<h3 id="转换中心-transform-origin"><a href="#转换中心-transform-origin" class="headerlink" title="转换中心 transform-origin"></a>转换中心 transform-origin</h3><p>该属性可以修改元素旋转的时候的中心点</p>
+<ol>
+<li>transform-origin:<strong>50% 50%;</strong>  默认值  元素的中心位置 百分比是相对于自身的宽度和高度</li>
+<li>transform-origin:<strong>top left;</strong>  左上角   和 transform-origin：0 0;相同</li>
+<li>transform-origin:<strong>50px 50px;</strong>  距离左上角 50px 50px 的位置</li>
+<li>transform-origin：<strong>0</strong>;  只写一个值的时候  第二个值默认为 50%;</li>
+</ol>
+<h3 id="2d缩放-scale"><a href="#2d缩放-scale" class="headerlink" title="2d缩放 scale"></a>2d缩放 scale</h3><p>缩放，顾名思义，可以放大和缩小。 只要给元素添加上了这个属性就能控制它放大还是缩小 </p>
+<p>步骤：</p>
+<ol>
+<li>给元素添加转换属性 <code>transform</code></li>
+<li>转换的属性值为 <code>scale(宽的倍数,高的倍数)</code>    如 宽变为两倍，高变为3倍 <code>transform:scale(2,3)</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    transform:scale(2,3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2018/05/30/H5C3/1524966701225.png"></p>
+<p> <strong>小结</strong></p>
+<ol>
+<li>transform:scale(1,1) 放大一倍 相对于没有放大</li>
+<li>transform:scale(2,2) 宽和高都放大了2倍</li>
+<li>transform:scale(2)  只写一个参数 第二个参数则和第一个参数一样 相当于 scale(2,2)</li>
+<li>transform:scale(0.5,0.5)  缩小 </li>
+<li>transform:scale(-2,-2) 反向放大2倍    很少用负数 容易让人产生误解</li>
+</ol>
+<h2 id="动画-animation"><a href="#动画-animation" class="headerlink" title="动画 animation"></a>动画 animation</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ol>
+<li><p>动画名</p>
+<p>设置要使用的动画名 <code>animation-name:xxx;</code></p>
+</li>
+<li><p>持续时间</p>
+<p>设置动画播放的持续时间  <code>animation-duration:3s</code></p>
+</li>
+<li><p>速度曲线</p>
+<p>和设置过渡的速度曲线一样 <code>animation-timing-function:linear;</code></p>
+<ul>
+<li>linear： 匀速</li>
+<li>ease： 慢-快-慢  默认值</li>
+<li>ease-in： 慢-快。</li>
+<li>ease-out： 快-慢。</li>
+<li>ease-in-out： 慢-快-慢。</li>
+</ul>
+</li>
+<li><p>延迟时间</p>
+<p><code>animation-delay: 0s;</code></p>
+</li>
+<li><p>循环次数</p>
+<p>设置动画播放的循环次数  <code>animation-iteration-count: 2;</code>  <strong>infinite</strong> 为无限循环</p>
+</li>
+<li><p>循环方向</p>
+<p><code>animation-direction</code></p>
+<p>如在动画中定义了  <strong>0%：红色</strong>  <strong>100%：黑色</strong> 那么 当属性值为 </p>
+<ol>
+<li><strong>normal</strong>  默认值  <strong>红 -&gt; 黑</strong></li>
+<li><strong>reverse</strong> 反向运行    <strong>黑 -&gt; 红</strong></li>
+<li><strong>alternate</strong>  正-反-正…  <strong>红 -&gt; 黑 -&gt; 红…</strong>  </li>
+<li><strong>alternate-reverse</strong>  反-正-反..   <strong>黑 -&gt; 红 -&gt; 黑 …</strong> </li>
+<li>以上与循环次数有关</li>
+</ol>
+</li>
+<li><p>动画等待或者结束的状态</p>
+<p><code>animation-fill-mode</code> 设置动画在等待或者结束的时候的状态</p>
+<ul>
+<li><strong>forwards</strong>：动画结束后，元素样式停留在 100% 的样式</li>
+<li><strong>backwards</strong>： 在延迟等待的时间内，元素样式停留在 0% 的样式</li>
+<li><strong>both</strong>： 同时设置了 forwards和backwards两个属性值</li>
+</ul>
+</li>
+<li><p>暂停和播放</p>
+<p><code>animation-play-state</code>  控制 <strong>播放</strong> 还是 <strong>暂停</strong> </p>
+<p><code>running</code> 播放   <code>paused</code> 暂停</p>
+</li>
+</ol>
+<h3 id="复合写法"><a href="#复合写法" class="headerlink" title="复合写法"></a>复合写法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">animation: name duration timing-function delay iteration-count direction fill-mode;</span><br></pre></td></tr></table></figure>
+
+<h3 id="多个动画写法"><a href="#多个动画写法" class="headerlink" title="多个动画写法"></a>多个动画写法</h3><p>用逗号分隔</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">animation:</span><br><span class="line">name duration timing-function delay iteration-count direction fill-mode，</span><br><span class="line">animation: name duration timing-function delay iteration-count direction fill-mode;</span><br></pre></td></tr></table></figure>
+
+<h3 id="动画结束事件animationend"><a href="#动画结束事件animationend" class="headerlink" title="动画结束事件animationend"></a>动画结束事件animationend</h3><p>元素在动画结束之后，会自动触发的事件 <strong>animationend</strong>   </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var div = document.querySelector(&quot;div&quot;);</span><br><span class="line">    div.addEventListener(&quot;animationend&quot;, function () &#123;</span><br><span class="line">      console.log(&quot;div的动画结束之后，触发&quot;);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3D转换"><a href="#3D转换" class="headerlink" title="3D转换"></a>3D转换</h2><p>3d转换是改变标签在3<strong>坐标系</strong>上的<strong>位置和形状</strong>的一种技术</p>
+<h3 id="3维坐标系"><a href="#3维坐标系" class="headerlink" title="3维坐标系"></a>3维坐标系</h3><p>3维坐标系其实就是指立体空间，立体空间是由3个轴共同组成的  </p>
+<ul>
+<li>x轴 水平向右 </li>
+<li>y轴 垂直向下 </li>
+<li>z轴 垂直屏幕 由屏幕里面指向屏幕的外面  </li>
+</ul>
+<p><img src="/2018/05/30/H5C3/1943303239310571602.png"></p>
+<h3 id="3d移动-translate3d"><a href="#3d移动-translate3d" class="headerlink" title="3d移动 translate3d"></a>3d移动 translate3d</h3><p>3d移动在2d移动的基础上多加了一个可以移动的方向，就是z轴方向</p>
+<p><strong>语法：</strong></p>
+<ol>
+<li>transform:<strong>translate3d</strong>(x,y,z)  其中 <strong>x y z</strong> 分别指要移动的轴的方向的距离</li>
+<li>translform:<strong>translateX</strong>(100px)  仅仅是移动在x轴上移动</li>
+<li>translform:<strong>translateY</strong>(100px)  仅仅是移动在Y轴上移动</li>
+<li>translform:<strong>translateZ</strong>(100px)  仅仅是移动在Z轴上移动  </li>
+</ol>
+<p><strong>注意</strong>:</p>
+<p>因为z轴是垂直屏幕，由里指向外面，所以 默认是看不到元素在z轴的方向上移动，想要看到，可以使用下面的 <strong>视距</strong> 属性设置</p>
+<h3 id="视距-perspertive"><a href="#视距-perspertive" class="headerlink" title="视距 perspertive"></a>视距 perspertive</h3><p>人在看物体时，有个规律，如 <strong>远的物体看起来小</strong> <strong>近的物体看起来大</strong>   </p>
+<p><strong>perspertive</strong> 就是用来设置  <strong>人</strong> 和 <strong>物体</strong> 的距离      </p>
+<p>如 我们想要看到 物体 在z轴上的移动  的 <strong>远大近小</strong> 效果时  </p>
+<ol>
+<li>设置物体的 <code>translateZ</code> 一般大于 0  如  <code>transform:translateZ(100px)</code></li>
+<li>设置 人和物体的距离 - 视距    这个值规定要设置给<strong>物体的父元素</strong>   <code>perspertive:1000px</code></li>
+<li>动态改变物体的 <code>translateZ</code> 即可观察效果</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/* 父元素 */</span><br><span class="line">body &#123;</span><br><span class="line">  /* 视距 */</span><br><span class="line">  perspective: 1000px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 目标 */</span><br><span class="line">div &#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  background-color: aqua;</span><br><span class="line">  margin: 100px auto;</span><br><span class="line">  /* z轴的移动 */</span><br><span class="line">  transform: translateZ(0px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2018/05/30/H5C3/5.gif"></p>
+<p><strong>小结</strong></p>
+<ol>
+<li>translateZ的值和perspertive都要大于0 否则容易出现兼容性问题</li>
+</ol>
+<h3 id="3d旋转-rotate3d"><a href="#3d旋转-rotate3d" class="headerlink" title="3d旋转 rotate3d"></a>3d旋转 rotate3d</h3><p>3d旋转指可以让元素在3维平面内沿着 <strong>x轴，y轴，z轴或者自定义轴</strong>进行旋转  对于元素旋转的方向的判断 我们需要先学习一个<strong>左手准则</strong></p>
+<h4 id="左手准则"><a href="#左手准则" class="headerlink" title="左手准则"></a>左手准则</h4><p>比如要判断某元素沿着x轴是怎么旋转的</p>
+<ol>
+<li>左手的手拇指指向 x轴的正方向</li>
+<li>其余手指的弯曲方向就是该元素沿着x轴旋转的方向了</li>
+</ol>
+<p><img src="/2018/05/30/H5C3/3-1523586345213.gif"></p>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><ol>
+<li><code>transform:rotateX(45deg);</code> 沿着x轴正方向旋转 45度</li>
+<li><code>transform:rotateY(45deg)</code> 沿着y轴正方向旋转 45deg</li>
+<li><code>transform:rotateZ(45deg)</code> 沿着Z轴正方向旋转 45deg</li>
+<li><code>transform:rotate3d(x,y,z,deg)</code> 沿着自定义轴旋转 deg为角度</li>
+</ol>
+<h3 id="3D缩放-scale3d"><a href="#3D缩放-scale3d" class="headerlink" title="3D缩放 scale3d"></a>3D缩放 scale3d</h3><p>3d缩放 可以控制元素 在 x轴，y轴，z轴上的缩放，也可以理解为 宽，高，厚度的缩放。</p>
+<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><ol>
+<li><code>transform: scale3d(1 ,1,2);</code>  宽，高 缩放一倍，厚度放大两倍</li>
+<li><code>transform: scaleX(1)</code> 只缩放宽</li>
+<li><code>transform: scaleY(1)</code> 只缩放高</li>
+<li><code>transform: scaleZ(1)</code> 只缩放厚  </li>
+</ol>
+<h3 id="视距原点-perspective-origin"><a href="#视距原点-perspective-origin" class="headerlink" title="视距原点 perspective-origin"></a>视距原点 perspective-origin</h3><p>回顾<strong>视距</strong>知识点，</p>
+<p>视距可以设置 <strong>人 和 物体</strong> 之间的距离 也就是z轴方向的距离   </p>
+<p>而  <strong>视距原点</strong> 可以设置 人 站在x轴和y轴的位置。</p>
+<p><img src="/2018/05/30/H5C3/1524983412514.png"></p>
+<ol>
+<li>视距原点和视距一样，也是设置给要观察元素的<strong>父元素</strong>上</li>
+<li>perspective-origin:center center; 默认值是<strong>元素的中心点</strong></li>
+<li>perspective-origin:10px；  指定了一个参数的时候，第二个参数默认为center 也就是50%；</li>
+<li>perspective-origin:10% %； 百分比都是相对于自身的宽度和高度</li>
+</ol>
+<h3 id="转换样式-transform-style"><a href="#转换样式-transform-style" class="headerlink" title="转换样式  transform-style"></a>转换样式  transform-style</h3><p>结合3d立方体案例理解，控制<strong>子元素</strong>是否开启3维立体环境</p>
+<ul>
+<li><code>transform-style: flat;</code>  平面模式  -  不开启3维立体环境</li>
+<li><code>transform-style: preserve-3d;</code>  3维立体环境</li>
+</ul>
+<h3 id="3D转换总结"><a href="#3D转换总结" class="headerlink" title="3D转换总结"></a>3D转换总结</h3><ol>
+<li>百分比单位都是相对于自身</li>
+<li>视距、视距原点、转换样式 这三个属性都是给<strong>父元素</strong>添加的</li>
+</ol>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2018/05/23/HTML5CSS3/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">HTML5CSS3</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Jmengh</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2D%E8%BD%AC%E6%8D%A2-transform"><span class="nav-text">2D转换 transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E7%BB%B4%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-text">2维坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2d%E7%A7%BB%E5%8A%A8-translate"><span class="nav-text">2d移动 translate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2d%E6%97%8B%E8%BD%AC-rotate"><span class="nav-text">2d旋转 rotate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E4%B8%AD%E5%BF%83-transform-origin"><span class="nav-text">转换中心 transform-origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2d%E7%BC%A9%E6%94%BE-scale"><span class="nav-text">2d缩放 scale</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB-animation"><span class="nav-text">动画 animation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E5%86%99%E6%B3%95"><span class="nav-text">复合写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E5%8A%A8%E7%94%BB%E5%86%99%E6%B3%95"><span class="nav-text">多个动画写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB%E7%BB%93%E6%9D%9F%E4%BA%8B%E4%BB%B6animationend"><span class="nav-text">动画结束事件animationend</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3D%E8%BD%AC%E6%8D%A2"><span class="nav-text">3D转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E7%BB%B4%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-text">3维坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3d%E7%A7%BB%E5%8A%A8-translate3d"><span class="nav-text">3d移动 translate3d</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%86%E8%B7%9D-perspertive"><span class="nav-text">视距 perspertive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3d%E6%97%8B%E8%BD%AC-rotate3d"><span class="nav-text">3d旋转 rotate3d</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A6%E6%89%8B%E5%87%86%E5%88%99"><span class="nav-text">左手准则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95-1"><span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3D%E7%BC%A9%E6%94%BE-scale3d"><span class="nav-text">3D缩放 scale3d</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95-2"><span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%86%E8%B7%9D%E5%8E%9F%E7%82%B9-perspective-origin"><span class="nav-text">视距原点 perspective-origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E6%A0%B7%E5%BC%8F-transform-style"><span class="nav-text">转换样式  transform-style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3D%E8%BD%AC%E6%8D%A2%E6%80%BB%E7%BB%93"><span class="nav-text">3D转换总结</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
