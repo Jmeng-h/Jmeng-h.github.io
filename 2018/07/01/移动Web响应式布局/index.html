@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jmengh">
+    
+    <title>
+        
+            移动Web响应式布局 |
+        
+        Jmengh BLOG
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.jpg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"清晨的森林分出两条路，我选择了人迹更少的那一条，从此决定我一生的道路。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Jmengh BLOG
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">移动Web响应式布局</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Jmengh</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2018-07-01 21:38:40
+    </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="移动端WEB开发之响应式布局"><a href="#移动端WEB开发之响应式布局" class="headerlink" title="移动端WEB开发之响应式布局"></a>移动端WEB开发之响应式布局</h2><h3 id="响应式开发原理"><a href="#响应式开发原理" class="headerlink" title="响应式开发原理"></a>响应式开发原理</h3><h4 id="响应式开发原理-1"><a href="#响应式开发原理-1" class="headerlink" title="响应式开发原理"></a>响应式开发原理</h4><p>就是使用媒体查询针对不同宽度的设备进行布局和样式的设置，从而适配不同设备的目的。</p>
+<p>设备的划分情况：</p>
+<ul>
+<li>小于768的为超小屏幕（手机）</li>
+<li>768~992之间的为小屏设备（平板）</li>
+<li>992~1200的中等屏幕（桌面显示器）</li>
+<li>大于1200的宽屏设备（大桌面显示器）</li>
+</ul>
+<h4 id="响应式布局容器"><a href="#响应式布局容器" class="headerlink" title="响应式布局容器"></a>响应式布局容器</h4><p>响应式需要一个父级做为布局容器，来配合子级元素来实现变化效果。</p>
+<p>原理就是在不同屏幕下，通过媒体查询来改变这个布局容器的大小，再改变里面子元素的排列方式和大小，从而实现不同屏幕下，看到不同的页面布局和样式变化。</p>
+<p>父容器版心的尺寸划分</p>
+<ul>
+<li>超小屏幕（手机，小于 768px）：设置宽度为 100%</li>
+<li>小屏幕（平板，大于等于 768px）：设置宽度为 750px</li>
+<li>中等屏幕（桌面显示器，大于等于 992px）：宽度设置为 970px</li>
+<li>大屏幕（大桌面显示器，大于等于 1200px）：宽度设置为 1170px </li>
+</ul>
+<p>但是我们也可以根据实际情况自己定义划分</p>
+<h3 id="Bootstrap简介"><a href="#Bootstrap简介" class="headerlink" title="Bootstrap简介"></a>Bootstrap简介</h3><h4 id="Bootstrap简介-1"><a href="#Bootstrap简介-1" class="headerlink" title="Bootstrap简介"></a>Bootstrap简介</h4><p>Bootstrap 来自 Twitter（推特），是目前最受欢迎的前端框架。Bootstrap 是基于HTML、CSS 和 JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。</p>
+<p><a class="link" href="lhttp://www.bootcss.com/">中文网<i class="fas fa-external-link-alt"></i></a>  <a class="link" href="lhttp://getbootstrap.com/">官网<i class="fas fa-external-link-alt"></i></a>  <a class="link" target="_blank" rel="noopener" href="http://bootstrap.css88.com/">推荐网站<i class="fas fa-external-link-alt"></i></a></p>
+<p>框架：顾名思义就是一套架构，它有一套比较完整的网页功能解决方案，而且控制权在框架本身，有预制样式库、组件和插件。使用者要按照框架所规定的某种规范进行开发。</p>
+<h4 id="bootstrap优点"><a href="#bootstrap优点" class="headerlink" title="bootstrap优点"></a>bootstrap优点</h4><ul>
+<li>标准化的html+css编码规范</li>
+<li>提供了一套简洁、直观、强悍的组件</li>
+<li>有自己的生态圈，不断的更新迭代</li>
+<li>让开发更简单，提高了开发的效率</li>
+</ul>
+<h4 id="版本简介"><a href="#版本简介" class="headerlink" title="版本简介"></a>版本简介</h4><p>2.x.x：停止维护,兼容性好,代码不够简洁，功能不够完善。</p>
+<p>3.x.x：目前使用最多,稳定,但是放弃了IE6-IE7。对 IE8 支持但是界面效果不好,偏向用于开发响应式布局、移动设备优先的WEB 项目。</p>
+<p>4.x.x：最新版，目前还不是很流行</p>
+<h4 id="bootstrap基本使用"><a href="#bootstrap基本使用" class="headerlink" title="bootstrap基本使用"></a>bootstrap基本使用</h4><p>在现阶段我们还没有接触JS相关课程，所以我们只考虑使用它的样式库。</p>
+<p>Bootstrap 使用四步曲： </p>
+<ol>
+<li><p>创建文件夹结构 </p>
+<p><img src="/2018/07/01/%E7%A7%BB%E5%8A%A8Web%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/1.png"></p>
+</li>
+<li><p>创建 html 骨架结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">    &lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br><span class="line">    &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Bootstrap --&gt;</span><br><span class="line">    &lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;</span><br><span class="line">    &lt;!-- WARNING: Respond.js doesn&#x27;t work if you view the page via file:// --&gt;</span><br><span class="line">    &lt;!--[if lt IE 9]&gt;</span><br><span class="line">      &lt;script src=&quot;//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">      &lt;script src=&quot;//cdn.bootcss.com/respond.js/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;![endif]--&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h1&gt;你好，世界！&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- jQuery (necessary for Bootstrap&#x27;s JavaScript plugins) --&gt;</span><br><span class="line">    &lt;script src=&quot;//cdn.bootcss.com/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;</span><br><span class="line">    &lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>引入相关样式文件  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Bootstrap 核心样式--&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>书写内容 </p>
+<p>直接拿Bootstrap 预先定义好的样式来使用</p>
+<p>修改Bootstrap 原来的样式，注意权重问题</p>
+<p>学好Bootstrap 的关键在于知道它定义了哪些样式，以及这些样式能实现什么样的效果</p>
+</li>
+</ol>
+<h4 id="bootstrap布局容器"><a href="#bootstrap布局容器" class="headerlink" title="bootstrap布局容器"></a>bootstrap布局容器</h4><p>Bootstrap 需要为页面内容和栅格系统包裹一个 .container 或者.container-fluid 容器，它提供了两个作此用处的类。</p>
+<p>.container</p>
+<ul>
+<li>响应式布局的容器  固定宽度</li>
+<li>大屏 ( &gt;=1200px)  宽度定为 1170px</li>
+<li>中屏 ( &gt;=992px)   宽度定为  970px</li>
+<li>小屏 ( &gt;=768px)   宽度定为  750px</li>
+<li>超小屏  (100%) </li>
+</ul>
+<p>.container-fluid</p>
+<ul>
+<li>流式布局容器 百分百宽度</li>
+<li>占据全部视口（viewport）的容器。</li>
+</ul>
+<h4 id="bootstrap栅格系统"><a href="#bootstrap栅格系统" class="headerlink" title="bootstrap栅格系统"></a>bootstrap栅格系统</h4><p>Bootstrap提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。</p>
+<p>栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。</p>
+<ul>
+<li>按照不同屏幕划分为1~12 等份</li>
+<li>行（row） 可以去除父容器作用15px的边距</li>
+<li>xs-extra small：超小； sm-small：小；  md-medium：中等； lg-large：大；</li>
+<li>列（column）大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列</li>
+<li>每一列默认有左右15像素的 padding</li>
+<li>可以同时为一列指定多个设备的类名，以便划分不同份数  例如 class=”col-md-4 col-sm-6”</li>
+</ul>
+<p>栅格嵌套</p>
+<p>栅格系统内置的栅格系统将内容再次嵌套。简单理解就是一个列内再分成若干份小列。我们可以通过添加一个新的 .row 元素和一系列 .col-sm-* 元素到已经存在的 .col-sm-*<br>元素内。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 列嵌套 --&gt;</span><br><span class="line"> &lt;div class=&quot;col-sm-4&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">         &lt;div class=&quot;col-sm-6&quot;&gt;小列&lt;/div&gt;</span><br><span class="line">         &lt;div class=&quot;col-sm-6&quot;&gt;小列&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>列偏移</strong></p>
+<p>使用 .col-md-offset-* 类可以将列向右侧偏移。这些类实际是通过使用 * 选择器为当前元素增加了左侧的边距（margin）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 列偏移 --&gt;</span><br><span class="line"> &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">     &lt;div class=&quot;col-lg-4&quot;&gt;1&lt;/div&gt;</span><br><span class="line">     &lt;div class=&quot;col-lg-4 col-lg-offset-4&quot;&gt;2&lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>列排序</strong></p>
+<p>通过使用 .col-md-push-* 和 .col-md-pull-* 类就可以很容易的改变列（column）的顺序。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 列排序 --&gt;</span><br><span class="line"> &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">     &lt;div class=&quot;col-lg-4 col-lg-push-8&quot;&gt;左侧&lt;/div&gt;</span><br><span class="line">     &lt;div class=&quot;col-lg-8 col-lg-pull-4&quot;&gt;右侧&lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>响应式工具</strong></p>
+<p>为了加快对移动设备友好的页面开发工作，利用媒体查询功能，并使用这些工具类可以方便的针对不同设备展示或隐藏页面内容。</p>
+<p><img src="/2018/07/01/%E7%A7%BB%E5%8A%A8Web%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/2.jpg"></p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2018/06/24/%E7%A7%BB%E5%8A%A8Web-rem%E5%B8%83%E5%B1%80/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">移动Web-rem布局</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Jmengh</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AFWEB%E5%BC%80%E5%8F%91%E4%B9%8B%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80"><span class="nav-text">移动端WEB开发之响应式布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%BC%80%E5%8F%91%E5%8E%9F%E7%90%86"><span class="nav-text">响应式开发原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%BC%80%E5%8F%91%E5%8E%9F%E7%90%86-1"><span class="nav-text">响应式开发原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E5%AE%B9%E5%99%A8"><span class="nav-text">响应式布局容器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap%E7%AE%80%E4%BB%8B"><span class="nav-text">Bootstrap简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bootstrap%E7%AE%80%E4%BB%8B-1"><span class="nav-text">Bootstrap简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bootstrap%E4%BC%98%E7%82%B9"><span class="nav-text">bootstrap优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E7%AE%80%E4%BB%8B"><span class="nav-text">版本简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bootstrap%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-text">bootstrap基本使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bootstrap%E5%B8%83%E5%B1%80%E5%AE%B9%E5%99%A8"><span class="nav-text">bootstrap布局容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bootstrap%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F"><span class="nav-text">bootstrap栅格系统</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
