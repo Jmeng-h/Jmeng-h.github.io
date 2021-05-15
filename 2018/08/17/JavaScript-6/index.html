@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jmengh">
+    
+    <title>
+        
+            JavaScript-6 |
+        
+        Jmengh BLOG
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.jpg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"清晨的森林分出两条路，我选择了人迹更少的那一条，从此决定我一生的道路。"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Jmengh BLOG
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">JavaScript-6</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Jmengh</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2018-08-17 20:44:12
+    </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><p>JavaScript 中的对象分为3种：</p>
+<p>​         <strong>自定义对象 、内置对象、 浏览器对象</strong></p>
+<p>前面两种对象是JS 基础 内容，属于 ECMAScript；  第三个浏览器对象属于 JS 独有的， JS API 讲解内置对象就是指 JS 语言自带的一些对象，这些对象供开发者使用，并提供了一些常用的或是<strong>最基本而必要的功能</strong>（属性和方法），内置对象最大的优点就是帮助我们快速开发</p>
+<p> JavaScript 提供了多个内置对象：Math、 Date 、Array、String等    </p>
+<h3 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h3><p>Math 对象不是构造函数，它具有数学常数和函数的属性和方法。跟数学相关的运算（求绝对值，取整、最大值等）可以使用 Math 中的成员。</p>
+<p><img src="/2018/08/17/JavaScript-6/Snipaste_2021-05-15_19-46-40.png"></p>
+<h3 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h3><p>​     Date 对象和 Math 对象不一样，Date是一个构造函数，所以使用时需要实例化后才能使用其中具体方法和属性。Date 实例用来处理日期和时间</p>
+<ul>
+<li><p>使用Date实例化日期对象</p>
+<ul>
+<li><p>获取当前时间必须实例化：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var now = new Date();</span><br></pre></td></tr></table></figure></li>
+<li><p>获取指定时间的日期对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var future = new Date(&#x27;2019/5/1&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>注意：如果创建实例时并未传入参数，则得到的日期对象是当前时间对应的日期对象</p>
+</li>
+</ul>
+</li>
+<li><p>使用Date实例的方法和属性    </p>
+</li>
+<li><p>通过Date实例获取总毫米数</p>
+<ul>
+<li><p>总毫秒数的含义</p>
+<p>​    基于1970年1月1日（世界标准时间）起的毫秒数</p>
+</li>
+<li><p>获取总毫秒数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 实例化Date对象</span><br><span class="line">var now = new Date();</span><br><span class="line">// 1. 用于获取对象的原始值</span><br><span class="line">console.log(date.valueOf())	</span><br><span class="line">console.log(date.getTime())	</span><br><span class="line">// 2. 简单写可以这么做</span><br><span class="line">var now = + new Date();			</span><br><span class="line">// 3. HTML5中提供的方法，有兼容性问题</span><br><span class="line">var now = Date.now();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h3><h4 id="创建数组的两种方式"><a href="#创建数组的两种方式" class="headerlink" title="创建数组的两种方式"></a>创建数组的两种方式</h4><ul>
+<li><p>字面量方式</p>
+<ul>
+<li><p>示例代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,&quot;test&quot;,true];</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>new Array()</p>
+<ul>
+<li><p>示例代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = new Array();</span><br></pre></td></tr></table></figure>
+
+<p>​    注意：上面代码中arr创建出的是一个空数组，如果需要使用构造函数Array创建非空数组，可以在创建数组时传入参数</p>
+<p>​    参数传递规则如下：</p>
+<ul>
+<li><p>如果只传入一个参数，则参数规定了数组的长度</p>
+</li>
+<li><p>如果传入了多个参数，则参数称为数组的元素</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="检测是否为数组"><a href="#检测是否为数组" class="headerlink" title="检测是否为数组"></a>检测是否为数组</h4><ul>
+<li><p>instanceof 运算符</p>
+<ul>
+<li><p>instanceof 可以判断一个对象是否是某个构造函数的实例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 23];</span><br><span class="line">var obj = &#123;&#125;;</span><br><span class="line">console.log(arr instanceof Array); // true</span><br><span class="line">console.log(obj instanceof Array); // false</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Array.isArray()</p>
+<ul>
+<li><p>Array.isArray()用于判断一个对象是否为数组，isArray() 是 HTML5 中提供的方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 23];</span><br><span class="line">var obj = &#123;&#125;;</span><br><span class="line">console.log(Array.isArray(arr));   // true</span><br><span class="line">console.log(Array.isArray(obj));   // false</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="添加删除数组元素的方法"><a href="#添加删除数组元素的方法" class="headerlink" title="添加删除数组元素的方法"></a>添加删除数组元素的方法</h4><ul>
+<li>数组中有进行增加、删除元素的方法，部分方法如下表</li>
+</ul>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%872.png"></p>
+<p>​        注意：push、unshift为增加元素方法；pop、shift为删除元素的方法</p>
+<h4 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h4><ul>
+<li><p>数组中有对数组本身排序的方法，部分方法如下表</p>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%873.png"></p>
+<p>注意：sort方法需要传入参数来设置升序、降序排序</p>
+<ul>
+<li>如果传入“function(a,b){ return a-b;}”，则为升序</li>
+<li>如果传入“function(a,b){ return b-a;}”，则为降序</li>
+</ul>
+</li>
+</ul>
+<h4 id="数组索引方法"><a href="#数组索引方法" class="headerlink" title="数组索引方法"></a>数组索引方法</h4><ul>
+<li><p>数组中有获取数组指定元素索引值的方法，部分方法如下表</p>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%874.png"></p>
+</li>
+</ul>
+<h4 id="数组转换为字符串"><a href="#数组转换为字符串" class="headerlink" title="数组转换为字符串"></a>数组转换为字符串</h4><ul>
+<li><p>数组中有把数组转化为字符串的方法，部分方法如下表</p>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%875.png"></p>
+<p>​        注意：join方法如果不传入参数，则按照 “ , ”拼接元素</p>
+</li>
+</ul>
+<h4 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h4><ul>
+<li><p>数组中还有其他操作方法，同学们可以在课下自行查阅学习</p>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%876.png"></p>
+</li>
+</ul>
+<h3 id="字符串对象"><a href="#字符串对象" class="headerlink" title="字符串对象"></a>字符串对象</h3><h4 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h4><p>​    为了方便操作基本数据类型，JavaScript 还提供了三个特殊的引用类型：String、Number和 Boolean。</p>
+<p>基本包装类型就是把简单数据类型包装成为复杂数据类型，这样基本数据类型就有了属性和方法。</p>
+<p>js 会把基本数据类型包装为复杂数据类型，其执行过程如下 ：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 1. 生成临时变量，把简单类型包装为复杂数据类型</span><br><span class="line">var temp = new String(&#x27;andy&#x27;);</span><br><span class="line">// 2. 赋值给我们声明的字符变量</span><br><span class="line">str = temp;</span><br><span class="line">// 3. 销毁临时变量</span><br><span class="line">temp = null;</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串的不可变"><a href="#字符串的不可变" class="headerlink" title="字符串的不可变"></a>字符串的不可变</h4><p>​    指的是里面的值不可变，虽然看上去可以改变内容，但其实是地址变了，内存中新开辟了一个内存空间。</p>
+<p>当重新给字符串变量赋值的时候，变量之前保存的字符串不会被修改，依然在内存中重新给字符串赋值，会重新在内存中开辟空间，这个特点就是字符串的不可变。<br>由于字符串的不可变，在<strong>大量拼接字符串</strong>的时候会有效率问题</p>
+<h4 id="根据字符返回位置"><a href="#根据字符返回位置" class="headerlink" title="根据字符返回位置"></a>根据字符返回位置</h4><p>字符串通过基本包装类型可以调用部分方法来操作字符串，以下是返回指定字符的位置的方法：</p>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%877.png"></p>
+<h4 id="根据位置返回字符"><a href="#根据位置返回字符" class="headerlink" title="根据位置返回字符"></a>根据位置返回字符</h4><p>字符串通过基本包装类型可以调用部分方法来操作字符串，以下是根据位置返回指定位置上的字符：</p>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%878.png"></p>
+<p>在上述方法中，charCodeAt方法返回的是指定位置上字符对应的ASCII码，ASCII码对照表如下：</p>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%879.png"></p>
+<h4 id="字符串操作方法"><a href="#字符串操作方法" class="headerlink" title="字符串操作方法"></a>字符串操作方法</h4><p>字符串通过基本包装类型可以调用部分方法来操作字符串，以下是部分操作方法：</p>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%8710.png"></p>
+<h4 id="replace-方法"><a href="#replace-方法" class="headerlink" title="replace()方法"></a><strong>replace()方法</strong></h4><p>​    replace() 方法用于在字符串中用一些字符替换另一些字符，其使用格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串.replace(被替换的字符串， 要替换为的字符串)；</span><br></pre></td></tr></table></figure>
+
+<h4 id="split-方法"><a href="#split-方法" class="headerlink" title="split()方法"></a>split()方法</h4><p>​    split()方法用于切分字符串，它可以将字符串切分为数组。在切分完毕之后，返回的是一个新数组。</p>
+<p>​    其使用格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串.split(&quot;分割字符&quot;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="简单数据类型和复杂数据类型"><a href="#简单数据类型和复杂数据类型" class="headerlink" title="简单数据类型和复杂数据类型"></a>简单数据类型和复杂数据类型</h2><h3 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h3><p>​    <strong>简单类型</strong>（<strong>基本数据类型</strong>、<strong>值类型</strong>）：在存储时变量中存储的是值本身，包括string ，number，boolean，undefined，null</p>
+<h3 id="复杂数据类型"><a href="#复杂数据类型" class="headerlink" title="复杂数据类型"></a>复杂数据类型</h3><p>​    复杂数据类型（引用类型）：在存储时变量中存储的仅仅是地址（引用），通过 new 关键字创建的对象（系统对象、自定义对象），如 Object、Array、Date等；</p>
+<h3 id="堆栈"><a href="#堆栈" class="headerlink" title="堆栈"></a>堆栈</h3><ul>
+<li>堆栈空间分配区别：</li>
+</ul>
+<p>　　1、栈（操作系统）：由操作系统自动分配释放存放函数的参数值、局部变量的值等。其操作方式类似于数据结构中的栈；</p>
+<p>简单数据类型存放到栈里面</p>
+<p>　　2、堆（操作系统）：存储复杂类型(对象)，一般由程序员分配释放，若程序员不释放，由垃圾回收机制回收。</p>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%8711.png"></p>
+<ul>
+<li><p>简单数据类型的存储方式</p>
+<p>值类型变量的数据直接存放在变量（栈空间）中</p>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%8712.png"></p>
+</li>
+<li><p>复杂数据类型的存储方式</p>
+<p>引用类型变量（栈空间）里存放的是地址，真正的对象实例存放在堆空间中</p>
+<p><img src="/2018/08/17/JavaScript-6/%E5%9B%BE%E7%89%8713.png"></p>
+</li>
+</ul>
+<h3 id="简单类型传参"><a href="#简单类型传参" class="headerlink" title="简单类型传参"></a>简单类型传参</h3><p>​    函数的形参也可以看做是一个变量，当我们把一个值类型变量作为参数传给函数的形参时，其实是把变量在栈空间里的值复制了一份给形参，那么在方法内部对形参做任何修改，都不会影响到的外部变量。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function fn(a) &#123;</span><br><span class="line">    a++;</span><br><span class="line">    console.log(a); </span><br><span class="line">&#125;</span><br><span class="line">var x = 10;</span><br><span class="line">fn(x);</span><br><span class="line">console.log(x)；</span><br></pre></td></tr></table></figure>
+
+<h3 id="复杂数据类型传参"><a href="#复杂数据类型传参" class="headerlink" title="复杂数据类型传参"></a>复杂数据类型传参</h3><p>​    函数的形参也可以看做是一个变量，当我们把引用类型变量传给形参时，其实是把变量在栈空间里保存的堆地址复制给了形参，形参和实参其实保存的是同一个堆地址，所以操作的是同一个对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function Person(name) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">function f1(x) &#123; // x = p</span><br><span class="line">    console.log(x.name); // 刘德华    </span><br><span class="line">    x.name = &quot;张学友&quot;;</span><br><span class="line">    console.log(x.name); // 刘德华    </span><br><span class="line">&#125;</span><br><span class="line">var p = new Person(&quot;刘德华&quot;);</span><br><span class="line">console.log(p.name);    // 张学友   </span><br><span class="line">f1(p);</span><br><span class="line">console.log(p.name);    // 张学友 </span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2018/08/10/JavaScript-5/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">JavaScript-5</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Jmengh</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="nav-text">内置对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math%E5%AF%B9%E8%B1%A1"><span class="nav-text">Math对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E5%AF%B9%E8%B1%A1"><span class="nav-text">日期对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1"><span class="nav-text">数组对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-text">创建数组的两种方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E4%B8%BA%E6%95%B0%E7%BB%84"><span class="nav-text">检测是否为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">添加删除数组元素的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F"><span class="nav-text">数组排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95%E6%96%B9%E6%B3%95"><span class="nav-text">数组索引方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">数组转换为字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95"><span class="nav-text">其他方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1"><span class="nav-text">字符串对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B"><span class="nav-text">基本包装类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%8F%98"><span class="nav-text">字符串的不可变</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E5%AD%97%E7%AC%A6%E8%BF%94%E5%9B%9E%E4%BD%8D%E7%BD%AE"><span class="nav-text">根据字符返回位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E4%BD%8D%E7%BD%AE%E8%BF%94%E5%9B%9E%E5%AD%97%E7%AC%A6"><span class="nav-text">根据位置返回字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="nav-text">字符串操作方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#replace-%E6%96%B9%E6%B3%95"><span class="nav-text">replace()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split-%E6%96%B9%E6%B3%95"><span class="nav-text">split()方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">简单数据类型和复杂数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">简单数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">复杂数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A0%86%E6%A0%88"><span class="nav-text">堆栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E7%B1%BB%E5%9E%8B%E4%BC%A0%E5%8F%82"><span class="nav-text">简单类型传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BC%A0%E5%8F%82"><span class="nav-text">复杂数据类型传参</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
